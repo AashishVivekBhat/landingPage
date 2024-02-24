@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,300;1,300&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --darkGray: hsl(0, 0%, 55%);
+  --veryDarkGray: hsl(0, 0%, 41%);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  max-width: 100vw;
+  font-size: 15px;   
+}
+
+section,
+footer {
+  padding-inline: 11.5em;
+}
+
+/* ---INTRO SECTION */
+
+.hero {
+  height: 93vh;
+  padding-block: 4.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url("/images/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Alata";
+  color: var(--white);
+}
+
+nav {
+  font-family: "Alata";
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li {
+  display: inline-block;
+
+  height: 2rem;
+  margin-left: 2.3rem;
+  list-style-type: none;
+
+  cursor: pointer;
+}
+
+/* IMPORTANT SNIPPET FOR SHORT BOTTOM BORDER */
+li:hover::after {
+  content: "";
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  border-bottom: 2px solid var(--white);
+}
+
+/* common styles */
+h1, h2, h3{
+  font-family: "Josefin Sans";
+  text-transform: uppercase;
+}
+
+/* HEADING */
+h1 {
+  width: 46.5rem;
+  margin-top: 10rem;
+  padding: 2.2rem 2.5rem 1.4rem;
+
+  font-weight: 300;
+  font-size: 5.2rem;
+  border: 3px solid var(--white);
+
+  line-height: 1em;
+}
+
+
+/* ------INTRO SECTION --------*/
+.main{
+    margin-block: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.intro-container{
+    margin: 13rem 0 0 -11rem;
+    padding: 5rem 0 0 5rem;
+
+    background-color: var(--white);
+    width: 35rem;
+
+}
+
+.intro-container h2{
+    line-height: 1em;
+    font-size: 3.5rem;
+    color: var(--veryDarkGray);
+}
+
+.intro-container p{
+    margin-top: 2rem;
+    font-family: "Alata";
+    color: var(--darkGray);
+}
+
+
+/* ------MIDDLE SECTION : header------ */
+.middle header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h2{
+  font-size: 3rem;
+  color: var(--veryDarkGray)
+}
+
+button{
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-family: "Alata";
+  color: var(--black);
+  background: none;
+  border: 2px solid var(--veryDarkGray);
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+button:hover{
+  color: var(--white);
+  background-color: var(--black);
+  cursor: pointer;
+}
+
+
+/* ----middle section : creations---- */
+article{
+  margin-block: 5rem 10rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img-container{
+  position: relative;
+}
+
+
+/* apply same technique as in nav border bottom */
+.img-container::after{
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  content: "";
+  width: 100%;
+  height: 99.1%; /* stop from overflowing */
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(28.89%, rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.601863)));
+  color: var(--white);
+  transition: all 0.2s ease-out;
+
+}
+
+
+.img-container img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.img-container h3{
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 13rem;
+
+  padding: 0 0 2.5rem 2.5rem;
+
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1em;
+}
+
+.img-container:hover::after {
+  cursor: pointer;
+  background-color: var(--white);
+  opacity: 0.8;
+}
+
+.img-container:hover h3 {
+  color: var(--black);
+}
+
+
+
+/* -----Footer section------- */
+footer{
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Alata";
+
+  display: grid;
+  grid-template: repeat(2, 1fr)/ repeat(2, 1fr);
+  row-gap: 1rem;
+
+  padding-block: 2rem;
+
+}
+
+footer li{
+  margin-left: 0;
+}
+
+.nav-links{
+  grid-area: 2 / 1 / -1 / 2;
+}
+
+.nav-links li{
+  padding-right: 2rem;
+}
+
+.social-links, footer p{
+  text-align: right;
+}
+
+.social-links li{
+  padding-left: 1rem;
+}
+
+footer p{
+  color: var(--darkGray);
+}
